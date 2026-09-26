@@ -8,7 +8,12 @@ import {
   type ReactNode,
 } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import seedJson from "../data/seed.json";
+import seedMeta from "../data/seed-meta.json";
+import expenses1 from "../data/seed-expenses-1.json";
+import expenses2 from "../data/seed-expenses-2.json";
+import expenses3 from "../data/seed-expenses-3.json";
+import expenses4 from "../data/seed-expenses-4.json";
+import expenses5 from "../data/seed-expenses-5.json";
 import type {
   AppState,
   BankAccount,
@@ -20,7 +25,16 @@ import type {
 import { uid } from "./format";
 
 const STORAGE_KEY = "budget-vf-v1";
-const seed = seedJson as SeedData;
+const seed = {
+  ...(seedMeta as Omit<SeedData, "expenses">),
+  expenses: [
+    ...(expenses1 as Expense[]),
+    ...(expenses2 as Expense[]),
+    ...(expenses3 as Expense[]),
+    ...(expenses4 as Expense[]),
+    ...(expenses5 as Expense[]),
+  ],
+} as SeedData;
 
 interface Store {
   ready: boolean;

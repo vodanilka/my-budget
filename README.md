@@ -20,15 +20,18 @@ iPhone-приложение бюджета по книге **Budget_VF.xlsm**. �
 
 ## Expo Go (iPhone)
 
+**В списке Projects внутри Expo Go My budget не появится.** Это dev-сервер, а не опубликованный проект аккаунта Expo. Откройте его по ссылке или QR — после этого оно останется в недавних.
+
 ```bash
 cd mobile
 npm install
 npx expo start --tunnel --port 47821
 ```
 
-1. Установите [Expo Go](https://apps.apple.com/app/expo-go/id982107779).
-2. Отсканируйте QR из терминала камерой iPhone или откройте `exp://` ссылку.
-3. Если туннель просит вход: `npx expo login` (аккаунт expo.dev). Без входа можно `npx expo start --lan`, но телефон должен быть в той же Wi‑Fi сети.
+1. Установите [Expo Go](https://apps.apple.com/app/expo-go/id982107779) и обновите его (нужен SDK 57).
+2. На iPhone откройте страницу загрузки Metro (`/_expo/loading?platform=ios`) и нажмите **Open in Expo Go**.
+3. Или в Expo Go нажмите сканер QR / **Enter URL** и вставьте `exp://…` из терминала. Не ищите название на вкладке Projects.
+4. Если официальный `--tunnel` просит вход: `npx expo login` (expo.dev). Без входа можно `--lan` в той же Wi‑Fi сети, либо Cloudflare-туннель как в этой сессии.
 
 ## PWA
 

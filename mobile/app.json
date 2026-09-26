@@ -1,0 +1,58 @@
+{
+  "expo": {
+    "name": "My budget",
+    "slug": "my-budget",
+    "scheme": "mybudget",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#2F5D4C"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.vodanilka.mybudget",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Камера нужна, чтобы сфотографировать чек и записать трату в бюджет.",
+        "NSPhotoLibraryUsageDescription": "Доступ к фото нужен, чтобы выбрать снимок чека."
+      }
+    },
+    "android": {
+      "package": "com.vodanilka.mybudget",
+      "adaptiveIcon": {
+        "backgroundColor": "#2F5D4C",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Камера нужна, чтобы сфотографировать чек и записать трату в бюджет."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Доступ к фото нужен, чтобы выбрать снимок чека."
+        }
+      ],
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
